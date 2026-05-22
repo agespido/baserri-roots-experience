@@ -9,38 +9,82 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProductorRouteImport } from './routes/productor'
+import { Route as ExperienciasRouteImport } from './routes/experiencias'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExperienciaIdRouteImport } from './routes/experiencia.$id'
 
+const ProductorRoute = ProductorRouteImport.update({
+  id: '/productor',
+  path: '/productor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienciasRoute = ExperienciasRouteImport.update({
+  id: '/experiencias',
+  path: '/experiencias',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperienciaIdRoute = ExperienciaIdRouteImport.update({
+  id: '/experiencia/$id',
+  path: '/experiencia/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/experiencias': typeof ExperienciasRoute
+  '/productor': typeof ProductorRoute
+  '/experiencia/$id': typeof ExperienciaIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/experiencias': typeof ExperienciasRoute
+  '/productor': typeof ProductorRoute
+  '/experiencia/$id': typeof ExperienciaIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/experiencias': typeof ExperienciasRoute
+  '/productor': typeof ProductorRoute
+  '/experiencia/$id': typeof ExperienciaIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/experiencias' | '/productor' | '/experiencia/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/experiencias' | '/productor' | '/experiencia/$id'
+  id: '__root__' | '/' | '/experiencias' | '/productor' | '/experiencia/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExperienciasRoute: typeof ExperienciasRoute
+  ProductorRoute: typeof ProductorRoute
+  ExperienciaIdRoute: typeof ExperienciaIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/productor': {
+      id: '/productor'
+      path: '/productor'
+      fullPath: '/productor'
+      preLoaderRoute: typeof ProductorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiencias': {
+      id: '/experiencias'
+      path: '/experiencias'
+      fullPath: '/experiencias'
+      preLoaderRoute: typeof ExperienciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,12 +92,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiencia/$id': {
+      id: '/experiencia/$id'
+      path: '/experiencia/$id'
+      fullPath: '/experiencia/$id'
+      preLoaderRoute: typeof ExperienciaIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExperienciasRoute: ExperienciasRoute,
+  ProductorRoute: ProductorRoute,
+  ExperienciaIdRoute: ExperienciaIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

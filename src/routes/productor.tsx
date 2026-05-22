@@ -49,7 +49,7 @@ function ProducerPanel() {
               Kaixo, Mikel 👋
             </h1>
             <p className="mt-1 text-muted-foreground">
-              Lo justo para gestionar tu caserío. Sin complicaciones.
+              Lo justo para gestionar tu baserri. Sin complicaciones.
             </p>
           </div>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">

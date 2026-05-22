@@ -44,7 +44,7 @@ function HomePage() {
               "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80')",
           }}
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/30 to-background" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/50 to-background" />
 
         <div className="mx-auto max-w-7xl px-4 py-24 md:px-6 md:py-36">
           <div className="max-w-3xl">
@@ -138,7 +138,7 @@ function HomePage() {
               Cómo funciona
             </p>
             <h2 className="mt-2 font-serif text-3xl text-foreground md:text-4xl">
-              Sencillo para ti, sencillo para el caserío
+              Sencillo para ti, sencillo para el baserri
             </h2>
           </div>
 

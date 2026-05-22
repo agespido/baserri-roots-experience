@@ -77,10 +77,10 @@ export const experiences: Experience[] = [
     duration: "2,5 horas",
     host: "Nerea — Apicultora",
     image:
-      "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&w=1200&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1473973266408-ed4e27abdd47?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1568526381923-caf3fd520382?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1470753321970-3f2a022576ce?auto=format&fit=crop&w=1200&q=80",
     ],
     description:
       "Descubre el mundo de las abejas en pleno Parque Natural del Gorbeia. Te equiparemos para que puedas acercarte a las colmenas con seguridad y recoger miel forestal recién extraída.",

@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { Navbar, Footer } from "../components/Navbar";
-import { experiences } from "../lib/experiences";
+import { experiences, type Experience } from "../lib/experiences";
 
 export const Route = createFileRoute("/experiencia/$id")({
   component: ExperienceDetail,
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/experiencia/$id")({
 });
 
 function ExperienceDetail() {
-  const exp = Route.useLoaderData();
+  const exp = Route.useLoaderData() as Experience;
   const [people, setPeople] = useState(2);
   const [date, setDate] = useState("");
   const [showModal, setShowModal] = useState(false);

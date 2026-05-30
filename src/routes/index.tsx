@@ -44,20 +44,20 @@ function HomePage() {
               "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80')",
           }}
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/50 to-background" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/80 via-white/60 to-background" />
 
         <div className="mx-auto max-w-7xl px-4 py-24 md:px-6 md:py-36">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center rounded-full bg-amber-50/20 px-3 py-1 text-xs font-medium uppercase tracking-wider text-amber-50 backdrop-blur">
+            <span className="inline-flex items-center rounded-full bg-black/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-foreground backdrop-blur">
               Agroturismo · Bizkaia
             </span>
-            <h1 className="mt-5 font-serif text-4xl leading-tight text-amber-50 md:text-6xl">
+            <h1 className="mt-5 font-serif text-4xl leading-tight text-foreground md:text-6xl">
               Conecta con la raíz. Vive experiencias rurales auténticas en Bizkaia.
             </h1>
-            <p className="mt-2 font-serif text-lg italic text-amber-50/90 md:text-xl">
+            <p className="mt-2 font-serif text-lg italic text-foreground/90 md:text-xl">
               Tradizioaren etorkizuna
             </p>
-            <p className="mt-4 max-w-xl text-base text-amber-50/80 md:text-lg">
+            <p className="mt-4 max-w-xl text-base text-foreground/80 md:text-lg">
               Talleres, catas y vivencias junto a productores locales. Pásalo en
               familia, en pareja o con amigos.
             </p>
